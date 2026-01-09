@@ -4,67 +4,87 @@ Dataset
 Additional Research
 
 
-Data Preprocessing
+*Data Preprocessing*
+This section documents the preprocessing steps applied to each dataset in the project.
+All preprocessing scripts were implemented in Python and designed to ensure consistency, reliability, and compatibility across datasets before analysis.
 
-This section summarizes the preprocessing steps performed per script / notebook. Each file focuses on cleaning, validating, and standardizing a specific dataset before analysis.
+*📄 Missing_Values_Analysis_for_Gold_import.py*
 
-Missing_Values_Analysis_for_Gold_import.py
+Purpose:
+To analyze and interpret missing values in the gold import trade dataset.
 
-Loaded gold import trade data covering multiple years.
+Preprocessing Steps:
 
-Calculated missing value ratios for all columns.
+Loaded multi-year gold import trade data.
 
-Identified structurally missing fields (e.g. export-related values in import data).
+Calculated column-wise missing value ratios.
 
-Provided column-level interpretation of missing values to distinguish expected vs. problematic NaNs.
+Identified structurally missing fields (e.g. export-related variables in import data).
 
-Used this analysis to guide downstream cleaning decisions instead of applying blind imputation.
+Interpreted missing values based on domain knowledge instead of applying automatic imputation.
 
-Cleandata_Gold_import_2019_2024.py
+Used results to guide subsequent cleaning decisions.
 
-Combined gold import datasets from 2019 to 2024 into a single, consistent dataset.
+*📄 Cleandata_Gold_import_2019_2024.py*
 
-Standardized column names and ensured schema consistency across years.
+Purpose:
+To clean, standardize, and merge gold import data from 2019–2024.
 
-Converted monetary and quantity-related fields to numeric data types.
+Preprocessing Steps:
 
-Standardized date fields to monthly frequency (YYYY-MM-01).
+Merged yearly datasets into a single consolidated dataframe.
 
-Removed duplicate records and ensured logical consistency in trade values.
+Standardized column names and ensured schema consistency.
 
-Produced a cleaned and analysis-ready gold import dataset.
+Converted monetary and quantity fields to numeric data types.
 
-US_Dollar_Index_Cleaning.ipynb
+Standardized date values to monthly frequency (YYYY-MM-01).
 
-Loaded raw US Dollar Index (DXY) data.
+Removed duplicate records and invalid entries.
 
-Cleaned unnecessary columns and renamed fields for clarity.
+Generated a clean, analysis-ready gold import dataset.
+
+*📄 US_Dollar_Index_Cleaning.ipynb*
+
+Purpose:
+To prepare US Dollar Index (DXY) data for time-series and macroeconomic analysis.
+
+Preprocessing Steps:
+
+Loaded raw DXY data.
+
+Removed unnecessary columns and renamed variables for clarity.
 
 Converted date columns to datetime format.
 
-Standardized the dataset to monthly frequency to match other macroeconomic datasets.
+Resampled and standardized data to monthly frequency.
 
-Prepared the dataset for time-series analysis and merging with trade and financial data.
+Prepared the dataset for merging with trade and financial indicators.
 
-Swift_Rmb_tracker.py
+*📄 Swift_Rmb_tracker.py*
 
-Processed SWIFT RMB Tracker data containing monthly indicators.
+Purpose:
+To clean and standardize SWIFT RMB Tracker data.
 
-Extracted relevant metrics related to RMB usage in international transactions.
+Preprocessing Steps:
+
+Loaded SWIFT RMB Tracker reports.
+
+Extracted relevant indicators related to RMB usage in global transactions.
 
 Cleaned formatting issues and removed non-data rows.
 
-Converted reporting dates to a consistent datetime format.
+Standardized reporting dates to datetime format.
 
-Ensured compatibility with other monthly macroeconomic datasets used in the project.
+Ensured consistency with other monthly macroeconomic datasets.
 
-Output Structure
+*📁 Preprocessing Outputs*
 
-All cleaned datasets are saved in a structured and reusable format.
+All cleaned datasets are saved in a structured format and reused across the project.
 
-Preprocessed data is used directly in the analysis and modeling stages without further manual intervention.
+Preprocessed data is directly consumed in analysis and modeling stages.
 
-The preprocessing pipeline ensures reproducibility and consistency across all datasets.
+The preprocessing workflow ensures reproducibility, consistency, and data integrity.
 
 
 Data Analysis
