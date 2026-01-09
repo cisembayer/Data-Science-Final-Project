@@ -1,15 +1,15 @@
-Dataset
+# Dataset
 
 
-Additional Research
+# Additional Research
 
 
-*Data Preprocessing*
+# Data Preprocessing
 
 This section documents the preprocessing steps applied to each dataset in the project.
 All preprocessing scripts were implemented in Python and designed to ensure consistency, reliability, and compatibility across datasets before analysis.
 
-*📄 Missing_Values_Analysis_for_Gold_import.py*
+## *📄 Missing_Values_Analysis_for_Gold_import.py*
 
 Purpose:
 To analyze and interpret missing values in the gold import trade dataset.
@@ -26,7 +26,7 @@ Interpreted missing values based on domain knowledge instead of applying automat
 
 Used results to guide subsequent cleaning decisions.
 
-*📄 Cleandata_Gold_import_2019_2024.py*
+## *📄 Cleandata_Gold_import_2019_2024.py*
 
 Purpose:
 To clean, standardize, and merge gold import data from 2019–2024.
@@ -45,7 +45,7 @@ Removed duplicate records and invalid entries.
 
 Generated a clean, analysis-ready gold import dataset.
 
-*📄 US_Dollar_Index_Cleaning.ipynb*
+## *📄 US_Dollar_Index_Cleaning.ipynb*
 
 Purpose:
 To prepare US Dollar Index (DXY) data for time-series and macroeconomic analysis.
@@ -62,7 +62,7 @@ Resampled and standardized data to monthly frequency.
 
 Prepared the dataset for merging with trade and financial indicators.
 
-*📄 Swift_Rmb_tracker.py*
+## *📄 Swift_Rmb_tracker.py*
 
 Purpose:
 To clean and standardize SWIFT RMB Tracker data.
@@ -79,7 +79,7 @@ Standardized reporting dates to datetime format.
 
 Ensured consistency with other monthly macroeconomic datasets.
 
-*📁 Preprocessing Outputs*
+## *📁 Preprocessing Outputs*
 
 All cleaned datasets are saved in a structured format and reused across the project.
 
@@ -88,4 +88,4 @@ Preprocessed data is directly consumed in analysis and modeling stages.
 The preprocessing workflow ensures reproducibility, consistency, and data integrity.
 
 
-Data Analysis
+# Data Analysis
