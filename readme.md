@@ -142,7 +142,7 @@ This repository contains three files -
   - Saved the cleaned dataset into the processed repository.
 
 ### / Micro Time Series/
-This repository contains csv files - 
+This repository contains a cleaned dataset, and during preprocessing, changes are made on the date format via pd.to_datetime() - 
 - bitcoin_etherium.csv
 - brent_crude_wti.csv
 - interest_rate.csv
