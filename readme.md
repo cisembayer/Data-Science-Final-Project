@@ -158,3 +158,48 @@ The preprocessing workflow ensures reproducibility, consistency, and data integr
 
 
 # Data Analysis
+## Swift vs BRICS Currency Share
+
+Swift_vs_BRICS_currency_share.ipynb / swift_vs_brics_currency_share.py
+
+### Purpose:
+To analyze SWIFT global payment currency shares and compare USD vs BRICS (R5 proxy) using official SWIFT RMB Tracker PDFs.
+
+### Data Source:
+Raw SWIFT RMB Tracker reports stored in:
+data/RAW/Swift/ (rmb-tracker_*.pdf)
+
+### Method / Steps Used:
+
+Extracted “Global payments by currency (%)” table from SWIFT PDFs using pdfplumber
+
+Parsed currency share values (USD, EUR, GBP, JPY, CNY, etc.) using regex
+
+Created a structured dataset (monthly shares) using pandas
+
+Converted monthly data into quarterly averages
+
+Computed Herfindahl Index (HHI) to measure payment concentration
+
+Identified largest quarterly shift in USD share
+
+Generated plots using matplotlib
+
+### BRICS Assumption:
+SWIFT reports do not provide a combined R5 (BRICS) currency share. Hence, CNY share is used as R5 proxy.
+
+## Outputs Generated (Saved in data/outputs/Swift/)
+
+### Tables:
+
+swift_currency_share_monthly_extracted.csv → Extracted monthly currency shares from SWIFT PDFs
+
+swift_currency_share_quarterly.csv → Quarterly averages + HHI + USD shift
+
+## Figures:
+
+usd_share_quarterly.png → USD quarterly trend
+
+eur_share_quarterly.png → EUR quarterly trend
+
+r5_proxy_share_quarterly.png → BRICS (CNY proxy) quarterly trend
