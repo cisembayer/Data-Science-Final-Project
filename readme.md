@@ -158,3 +158,29 @@ The preprocessing workflow ensures reproducibility, consistency, and data integr
 
 
 # Data Analysis
+UMESH SINGH
+Matriculation No: 58326751
+MY Resposiblity involves doing research and downloading data from differenct sources and seggregatated all questions for given weblinks for research and explored further weblinks for further research for entire team followed by conducting a comparative, data-driven analysis of global financial and commodity trends, focusing on Bitcoin trading activity, gold imports, and crude oil imports across major economies. Using cleaned datasets from international trade statistics and cryptocurrency exchanges, the study examines volume dynamics, price trends, and geopolitical groupings such as BRICS versus US–EU economies.
+
+The analysis includes time-series transformation, data reshaping, aggregation, normalization, and visualization to identify structural shifts in global trade and financial behavior. Key insights include the dominance of USD-based Bitcoin exchanges, rising BRICS participation in global gold imports, comparative price movements of gold and crude oil, and a compound annual growth rate (CAGR) analysis of BRICS gold reserves. The results highlight changing patterns in commodity demand, monetary hedging behavior, and alternative asset adoption in the global economy.
+
+⸻
+
+ Key Analytical Components
+	Q.How are global financial power shifts reflected across gold reserves, crypto transactions,
+Q.Will USD still remain the dominant currency in the World post July 2027?”
+• What is the average gold purchase per country per year? (BRICS Member vs US and EU
+countries)• What is the trend? Increasing or decreasing or stable?
+• How is this connected to USD dominance?
+• Which country increased reserves - gold, oil (and BTC) the most in 2024–2025?
+• Plot price trend charts for gold, oil and BTC
+• What insights do you generate here?
+• What is the CAGR of BRICS gold reserves since 2021?
+
+
+⸻
+ Tools & Libraries
+	•	Python
+	•	Pandas, NumPy
+	•	Matplotlib
+_____________________________________________________________________________________________________________________________
