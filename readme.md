@@ -183,4 +183,109 @@ countries)• What is the trend? Increasing or decreasing or stable?
 	•	Python
 	•	Pandas, NumPy
 	•	Matplotlib
+
 _____________________________________________________________________________________________________________________________
+
+## Santosh Doddaiah
+
+### Purpose:
+
+To analyze SWIFT global payment currency shares and compare USD vs BRICS (R5 proxy) using official SWIFT RMB Tracker PDFs.
+
+### Data Source:
+
+Raw SWIFT RMB Tracker reports stored in:
+data/RAW/Swift/ (rmb-tracker_*.pdf)
+
+### Method / Steps Used:
+
+Extracted “Global payments by currency (%)” table from SWIFT PDFs using pdfplumber
+
+Parsed currency share values (USD, EUR, GBP, JPY, CNY, etc.) using regex
+
+Created a structured dataset (monthly shares) using pandas
+
+Converted monthly data into quarterly averages
+
+Computed the Herfindahl Index (HHI) to measure payment concentration
+
+Identified the largest quarterly shift in USD share
+
+Generated plots using matplotlib
+
+### BRICS Assumption:
+
+SWIFT reports do not provide a combined R5 (BRICS) currency share. Hence, the CNY share is used as an R5 proxy.
+
+## Outputs Generated 
+### Tables:
+
+swift_currency_share_monthly_extracted.csv → Extracted monthly currency shares from SWIFT PDFs
+
+swift_currency_share_quarterly.csv → Quarterly averages + HHI + USD shift
+
+### Figures:
+
+usd_share_quarterly.png → USD quarterly trend
+
+eur_share_quarterly.png → EUR quarterly trend
+
+r5_proxy_share_quarterly.png → BRICS (CNY proxy) quarterly trend
+
+---------------------------------------------------------------------------------------------------------------------
+### Ajay 
+
+### Purpose:
+To analyze BTC trading dynamics by examining USD dominance (proxy), identifying which trading gateways are gaining/losing relevance, and checking macro impact using DXY and interest rates.
+
+### Data Source:
+Processed datasets used:
+
+data/processed/Gold and Crude_Petrol/bitcoinity_cleaned.csv
+
+data/processed/USD_Index/US_Dollar_Index_cleaned.csv
+
+data/processed/Micro Time Series/Interest Rate/interest_rate.csv
+
+### Method / Steps Used:
+
+Loaded weekly BTC trading volumes from bitcoinity_cleaned.csv
+
+Computed total BTC volume across exchanges
+
+Created USD proxy dominance using (Coinbase + Bitstamp share %)
+
+Generated exchange/gateway relevance summary for 30 days / 6 months / 1 year
+
+Resampled BTC dominance to monthly and merged with:
+
+US Dollar Index (DXY)
+
+Fed Funds Rate
+
+Computed correlation matrix between BTC USD-proxy share, DXY, and Interest Rate
+
+Generated plots using matplotlib
+
+### Assumption:
+The 
+Bitcoinity dataset contains exchange-level BTC volumes (not direct fiat volume). Therefore, Coinbase + Bitstamp are used as a USD trading gateway proxy.
+
+### Outputs Generated (Saved in data/outputs/BTC_Dynamics/)
+### Tables:
+
+btc_usd_proxy_dominance_timeseries.csv → USD proxy dominance time-series
+
+gateway_share_windows_summary.csv → Gateway relevance (30d / 6m / 1y)
+
+btc_macro_merged_monthly.csv → BTC dominance merged with DXY + Interest Rate
+
+btc_macro_correlation_matrix.csv → Correlation results
+
+### Figures:
+
+usd_proxy_dominance_trend.png → USD proxy dominance trend over time
+
+top5_gateways_share_trend.png → Top 5 gateway share trend
+
+usd_share_vs_dxy.png → USD proxy dominance vs DXY trend
